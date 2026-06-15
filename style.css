@@ -499,8 +499,8 @@ textarea::placeholder {
 .flower-note {
   margin-top: 36px;
   color: #c7b7aa;
-  font-size: 12px;
-  line-height: 2;
+  font-size: 11px;
+  line-height: 2.1;
   letter-spacing: 0.5px;
 }
 
