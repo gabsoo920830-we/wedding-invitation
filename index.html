@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>THE WEDDING ISSUE</title>
-<link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
 
-<div id="touchStart" class="touch-start">
+<div id="touchStart" class="touch-start" onclick="startMusicFirstTouch()">
   <div>
     <p>THE WEDDING</p>
     <span>TOUCH TO START</span>
@@ -20,8 +20,6 @@
 </audio>
 
 <button id="musicButton" class="music-button" onclick="toggleMusic()">SOUND OFF</button>
-
-</button>
 
 <div class="film-grain"></div>
 
@@ -119,27 +117,30 @@
   </p>
 
   <div class="accordion">
-<button class="accordion-title" onclick="toggleAccordion('groomAccount')">신랑측</button>
-<div class="accordion-content" id="groomAccount">
-<p>신랑 박갑수</p>
-<p>신한은행 110-345-861365</p>
-<button onclick="copyText('국민은행 123456-78-123456 박갑수')">COPY</button>
-<p>혼주 ○○○</p>
-<p>신한은행 000-000-000000</p>
-<button onclick="copyText('신한은행 000-000-000000 ○○○')">COPY</button>
-</div>
-</div>
-<div class="accordion">
-<button class="accordion-title" onclick="toggleAccordion('brideAccount')">신부측</button>
-<div class="accordion-content" id="brideAccount">
-<p>신부 곽애리</p>
-<p>카카오뱅크 3333-00-0000000</p>
-<button onclick="copyText('카카오뱅크 3333-00-0000000 곽애리')">COPY</button>
-<p>혼주 ○○○</p>
-<p>우리은행 0000-000-000000</p>
-<button onclick="copyText('우리은행 0000-000-000000 ○○○')">COPY</button>
-</div>
-</div>
+    <button class="accordion-title" onclick="toggleAccordion('groomAccount')">신랑측</button>
+    <div class="accordion-content" id="groomAccount">
+      <p>신랑 박갑수</p>
+      <p>신한은행 110-345-861365</p>
+      <button onclick="copyText('신한은행 110-345-861365 박갑수')">COPY</button>
+
+      <p>혼주 ○○○</p>
+      <p>신한은행 000-000-000000</p>
+      <button onclick="copyText('신한은행 000-000-000000 ○○○')">COPY</button>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-title" onclick="toggleAccordion('brideAccount')">신부측</button>
+    <div class="accordion-content" id="brideAccount">
+      <p>신부 곽애리</p>
+      <p>카카오뱅크 3333-00-0000000</p>
+      <button onclick="copyText('카카오뱅크 3333-00-0000000 곽애리')">COPY</button>
+
+      <p>혼주 ○○○</p>
+      <p>우리은행 0000-000-000000</p>
+      <button onclick="copyText('우리은행 0000-000-000000 ○○○')">COPY</button>
+    </div>
+  </div>
 </section>
 
 <section class="section dark reveal">
@@ -178,6 +179,6 @@
   <img id="modalImage">
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>

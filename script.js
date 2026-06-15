@@ -3,11 +3,17 @@ function openMap() {
 }
 
 function openNaverMap() {
-  window.open("https://map.naver.com/p/search/%EB%9D%BC%ED%8F%AC%EC%97%90%ED%8A%B8%20%EC%9B%A8%EB%94%A9%ED%99%80/place/36841824?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202606151406&locale=ko&svcName=map_pcv5&searchText=%EB%9D%BC%ED%8F%AC%EC%97%90%ED%8A%B8%20%EC%9B%A8%EB%94%A9%ED%99%80", "_blank");
+  window.open(
+    "https://map.naver.com/p/search/%EB%9D%BC%ED%8F%AC%EC%97%90%ED%8A%B8%20%EC%9B%A8%EB%94%A9%ED%99%80/place/36841824?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202606151406&locale=ko&svcName=map_pcv5&searchText=%EB%9D%BC%ED%8F%AC%EC%97%90%ED%8A%B8%20%EC%9B%A8%EB%94%A9%ED%99%80",
+    "_blank"
+  );
 }
 
 function openTmap() {
-  window.open("https://apis.openapi.sk.com/tmap/app/routes?name=%EA%B4%91%EB%AA%85%EC%97%AD%EC%82%AC%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80", "_blank");
+  window.open(
+    "https://apis.openapi.sk.com/tmap/app/routes?name=%EA%B4%91%EB%AA%85%EC%97%AD%EC%82%AC%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80",
+    "_blank"
+  );
 }
 
 function copyAddress() {
@@ -71,8 +77,10 @@ function startMusicFirstTouch() {
   const button = document.getElementById("musicButton");
 
   if (startScreen) {
-    startScreen.style.display = "none";
+    startScreen.classList.add("hide");
   }
+
+  if (!music) return;
 
   music.play()
     .then(() => {
@@ -85,18 +93,11 @@ function startMusicFirstTouch() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const startScreen = document.getElementById("touchStart");
-
-  if (startScreen) {
-    startScreen.addEventListener("click", startMusicFirstTouch);
-    startScreen.addEventListener("touchend", startMusicFirstTouch);
-  }
-});
-
 function toggleMusic() {
   const music = document.getElementById("bgMusic");
   const button = document.getElementById("musicButton");
+
+  if (!music) return;
 
   if (isPlaying) {
     music.pause();
