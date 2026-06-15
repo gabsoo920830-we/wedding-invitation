@@ -63,21 +63,22 @@ function startMusicFirstTouch() {
   const startScreen = document.getElementById("touchStart");
   const button = document.getElementById("musicButton");
 
-  music.play()
-    .then(() => {
-      isPlaying = true;
-      button.innerText = "SOUND OFF";
-      startScreen.classList.add("hide");
-    })
-    .catch(() => {
-      isPlaying = false;
-      button.innerText = "SOUND ON";
-      startScreen.classList.add("hide");
-    });
+ function startMusicFirstTouch() {
+
+  const music = document.getElementById("bgMusic");
+  const startScreen = document.getElementById("touchStart");
+  const button = document.getElementById("musicButton");
+
+  startScreen.classList.add("hide");
+
+  music.play().catch(() => {});
+
+  isPlaying = true;
+
+  button.innerText = "SOUND OFF";
 }
 
-document.getElementById("touchStart").addEventListener("click", startMusicFirstTouch);
-document.getElementById("touchStart").addEventListener("touchstart", startMusicFirstTouch);
+document.getElementById("touchStart").onclick = startMusicFirstTouch;
 
 function toggleMusic() {
   const music = document.getElementById("bgMusic");
