@@ -35,6 +35,7 @@ function closePhoto() {
   document.getElementById("photoModal").style.display = "none";
 }
 
+/* D-DAY */
 const weddingDate = new Date("2026-10-11T13:30:00").getTime();
 
 function updateDday() {
@@ -56,6 +57,7 @@ function updateDday() {
 setInterval(updateDday, 1000);
 updateDday();
 
+/* MUSIC */
 let isPlaying = false;
 
 function startMusicFirstTouch() {
@@ -63,22 +65,27 @@ function startMusicFirstTouch() {
   const startScreen = document.getElementById("touchStart");
   const button = document.getElementById("musicButton");
 
- function startMusicFirstTouch() {
+  if (startScreen) {
+    startScreen.classList.add("hide");
+  }
 
-  const music = document.getElementById("bgMusic");
-  const startScreen = document.getElementById("touchStart");
-  const button = document.getElementById("musicButton");
-
-  startScreen.classList.add("hide");
-
-  music.play().catch(() => {});
-
-  isPlaying = true;
-
-  button.innerText = "SOUND OFF";
+  music.play()
+    .then(() => {
+      isPlaying = true;
+      button.innerText = "SOUND OFF";
+    })
+    .catch(() => {
+      isPlaying = false;
+      button.innerText = "SOUND ON";
+    });
 }
 
-document.getElementById("touchStart").onclick = startMusicFirstTouch;
+const touchStart = document.getElementById("touchStart");
+
+if (touchStart) {
+  touchStart.addEventListener("click", startMusicFirstTouch);
+  touchStart.addEventListener("touchstart", startMusicFirstTouch);
+}
 
 function toggleMusic() {
   const music = document.getElementById("bgMusic");
@@ -89,16 +96,18 @@ function toggleMusic() {
     isPlaying = false;
     button.innerText = "SOUND ON";
   } else {
-    music.play();
-    isPlaying = true;
-    button.innerText = "SOUND OFF";
+    music.play()
+      .then(() => {
+        isPlaying = true;
+        button.innerText = "SOUND OFF";
+      })
+      .catch(() => {
+        alert("화면을 한 번 터치한 후 음악을 재생할 수 있습니다.");
+      });
   }
 }
 
-function scrollToMenu() {
-  document.querySelector(".section").scrollIntoView({ behavior: "smooth" });
-}
-
+/* SHARE */
 function sharePage() {
   if (navigator.share) {
     navigator.share({
@@ -112,11 +121,13 @@ function sharePage() {
   }
 }
 
+/* SCROLL REVEAL */
 const revealElements = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
   revealElements.forEach((element) => {
     const rect = element.getBoundingClientRect();
+
     if (rect.top < window.innerHeight - 80) {
       element.classList.add("active");
     }
@@ -126,6 +137,7 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
+/* RSVP */
 function submitRSVP() {
   const name = document.getElementById("guestName").value;
   const attendance = document.getElementById("attendance").value;
