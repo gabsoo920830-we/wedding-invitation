@@ -59,14 +59,19 @@ updateDday();
 
 /* MUSIC */
 let isPlaying = false;
+let hasStarted = false;
 
 function startMusicFirstTouch() {
+  if (hasStarted) return;
+
+  hasStarted = true;
+
   const music = document.getElementById("bgMusic");
   const startScreen = document.getElementById("touchStart");
   const button = document.getElementById("musicButton");
 
   if (startScreen) {
-    startScreen.classList.add("hide");
+    startScreen.style.display = "none";
   }
 
   music.play()
@@ -80,12 +85,14 @@ function startMusicFirstTouch() {
     });
 }
 
-const touchStart = document.getElementById("touchStart");
+document.addEventListener("DOMContentLoaded", function () {
+  const startScreen = document.getElementById("touchStart");
 
-if (touchStart) {
-  touchStart.addEventListener("click", startMusicFirstTouch);
-  touchStart.addEventListener("touchstart", startMusicFirstTouch);
-}
+  if (startScreen) {
+    startScreen.addEventListener("click", startMusicFirstTouch);
+    startScreen.addEventListener("touchend", startMusicFirstTouch);
+  }
+});
 
 function toggleMusic() {
   const music = document.getElementById("bgMusic");

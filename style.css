@@ -414,3 +414,8 @@ textarea::placeholder {
   opacity: 1;
   transform: translateY(0);
 }
+
+.touch-start {
+  cursor: pointer;
+  touch-action: manipulation;
+}
