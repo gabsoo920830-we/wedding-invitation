@@ -49,15 +49,28 @@ body {
 
 .music-button {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 18px;
+  right: 18px;
   z-index: 2500;
-  padding: 10px 13px;
-  background: rgba(0,0,0,0.62);
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.45);
   color: #f4f1ea;
-  border: 1px solid rgba(244,241,234,0.8);
-  font-size: 10px;
-  letter-spacing: 2px;
+
+  border: 1px solid rgba(244,241,234,0.4);
+  border-radius: 50%;
+
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+
   backdrop-filter: blur(8px);
 }
 
@@ -323,8 +336,21 @@ button {
 
 .submit-button {
   margin-top: 14px;
-  background: #f4f1ea;
+
+  background: #c7b7aa;
   color: #111;
+
+  border: none;
+
+  font-weight: 600;
+  letter-spacing: 3px;
+
+  transition: 0.3s;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+  opacity: 0.9;
 }
 
 input,
@@ -341,6 +367,14 @@ textarea {
   color: #f4f1ea;
   font-size: 15px;
   font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #c7b7aa;
+  box-shadow: 0 0 0 1px rgba(199,183,170,0.3);
 }
 
 select option {

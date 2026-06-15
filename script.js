@@ -88,11 +88,11 @@ function startMusicFirstTouch() {
   music.play()
     .then(() => {
       isPlaying = true;
-      button.innerText = "SOUND OFF";
+      button.innerText = "♫";
     })
     .catch(() => {
       isPlaying = false;
-      button.innerText = "SOUND ON";
+      button.innerText = "♪";
     });
 }
 
@@ -105,12 +105,12 @@ function toggleMusic() {
   if (isPlaying) {
     music.pause();
     isPlaying = false;
-    button.innerText = "SOUND ON";
+    button.innerText = "♪";
   } else {
     music.play()
       .then(() => {
         isPlaying = true;
-        button.innerText = "SOUND OFF";
+        button.innerText = "♫";
       })
       .catch(() => {
         alert("화면을 한 번 터치한 후 음악을 재생할 수 있습니다.");
