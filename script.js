@@ -7,7 +7,7 @@ function openNaverMap() {
 
 function openKakaoMap() {
   // 카카오맵 앱 실행 시도
-  window.location.href = "kakaomap://place?id=16488925";
+  window.location.href = "https://map.kakao.com/link/search/광명역사컨벤션웨딩홀";
 
   // 앱이 없으면 1초 후 웹으로 이동
   setTimeout(function () {
