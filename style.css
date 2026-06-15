@@ -10,7 +10,7 @@ body {
   text-align: center;
 }
 
-/* ===== TOUCH TO START ===== */
+/* TOUCH START */
 
 .touch-start {
   position: fixed;
@@ -22,6 +22,8 @@ body {
   align-items: center;
   justify-content: center;
   transition: opacity 0.8s ease, visibility 0.8s ease;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .touch-start.hide {
@@ -32,7 +34,7 @@ body {
 
 .touch-start p {
   margin: 0 0 18px;
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 38px;
   letter-spacing: -1px;
 }
@@ -43,28 +45,23 @@ body {
   letter-spacing: 4px;
 }
 
-/* ===== SOUND BUTTON ===== */
+/* SOUND BUTTON */
 
 .music-button {
   position: fixed;
   top: 16px;
   right: 16px;
   z-index: 2500;
-
   padding: 10px 13px;
-
   background: rgba(0,0,0,0.62);
   color: #f4f1ea;
-
   border: 1px solid rgba(244,241,234,0.8);
-
   font-size: 10px;
   letter-spacing: 2px;
-
   backdrop-filter: blur(8px);
 }
 
-/* ===== COVER ===== */
+/* COVER */
 
 .cover-section {
   position: relative;
@@ -74,21 +71,16 @@ body {
   margin: 0 auto;
   overflow: hidden;
   background: #000;
+  color: #fff;
 }
 
 .cover-bg {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
-  filter:
-    grayscale(18%)
-    contrast(108%)
-    brightness(78%);
+  filter: grayscale(18%) contrast(108%) brightness(78%);
 }
 
 .cover-dim {
@@ -104,7 +96,6 @@ body {
   left: 0;
   right: 0;
   z-index: 2;
-
   font-size: 10px;
   letter-spacing: 3px;
   line-height: 1.5;
@@ -122,34 +113,23 @@ body {
   top: 76px;
   left: 0;
   right: 0;
-
   z-index: 2;
-
   margin: 0;
-
-  font-family: Georgia, serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 66px;
   line-height: 0.82;
-
   letter-spacing: -4px;
   font-weight: 700;
-
-  color: white;
-
-  text-shadow:
-    0 4px 20px rgba(0,0,0,0.65);
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.65);
 }
 
 .cover-names {
   position: absolute;
-
   left: 20px;
   right: 20px;
   bottom: 148px;
-
   z-index: 2;
-
   font-size: 18px;
   letter-spacing: 3px;
   font-weight: 700;
@@ -157,24 +137,22 @@ body {
 
 .cover-bottom {
   position: absolute;
-
   left: 20px;
   right: 20px;
   bottom: 42px;
-
   z-index: 2;
-
   font-size: 12px;
   letter-spacing: 3px;
   line-height: 1.8;
   font-weight: 700;
 }
 
-/* ===== COMMON ===== */
+/* COMMON */
 
 .section {
   padding: 82px 24px;
   background: #111;
+  color: #f4f1ea;
 }
 
 .dark {
@@ -183,9 +161,7 @@ body {
 
 .label {
   margin: 0 0 20px;
-
   color: #c7b7aa;
-
   font-size: 10px;
   letter-spacing: 4px;
   font-weight: 700;
@@ -193,21 +169,16 @@ body {
 
 h2 {
   margin: 0 0 32px;
-
-  font-family: Georgia, serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 32px;
   line-height: 1;
-
   font-weight: 400;
-
   letter-spacing: -1px;
 }
 
 .text {
-  max-width: 340px;
   margin: 0 auto;
-
+  max-width: 340px;
   font-size: 16px;
   line-height: 2;
 }
@@ -216,53 +187,64 @@ h2 {
   margin-bottom: 26px;
 }
 
-/* ===== DDAY ===== */
+/* FAMILY */
+
+.family {
+  margin-top: 42px;
+  color: #c7b7aa;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+.family strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #f4f1ea;
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 2px;
+}
+
+/* D-DAY */
 
 .date-text {
   color: #c7b7aa;
-
   letter-spacing: 2px;
   font-size: 13px;
 }
 
 .dday-box {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 10px;
-
   max-width: 390px;
-
   margin: 34px auto 24px;
 }
 
 .dday-box div {
   border: 1px solid #3a3a3a;
-
   padding: 18px 6px;
 }
 
 .dday-box strong {
   display: block;
-
-  font-family: Georgia, serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 26px;
+  color: #f4f1ea;
 }
 
 .dday-box span {
   display: block;
-
   margin-top: 6px;
-
   color: #c7b7aa;
-
   font-size: 11px;
+  letter-spacing: 1px;
 }
 
 .dday-text {
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
 #dday {
@@ -270,63 +252,40 @@ h2 {
   font-weight: 700;
 }
 
-/* ===== GALLERY ===== */
+/* GALLERY */
 
 .photo-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 12px;
-
   max-width: 430px;
-
   margin: 0 auto;
 }
 
 .photo-grid img {
   width: 100%;
   height: 235px;
-
   object-fit: cover;
-
   display: block;
+  filter: contrast(103%);
 }
 
-/* ===== MODAL ===== */
-
-.photo-modal {
-  display: none;
-
-  position: fixed;
-  inset: 0;
-
-  z-index: 2600;
-
-  background: rgba(0,0,0,0.92);
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 20px;
-}
-
-.photo-modal img {
-  max-width: 100%;
-  max-height: 90vh;
-}
-
-/* ===== MAP ===== */
+/* LOCATION */
 
 .info-box {
   margin-bottom: 28px;
   line-height: 1.9;
 }
 
+.info-box p {
+  margin: 6px 0;
+}
+
 .main-info {
+  color: #fff;
   font-size: 15px;
-  font-weight: 700;
   letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .map-buttons {
@@ -337,12 +296,15 @@ h2 {
   margin: 14px auto 0;
 }
 
-/* ===== FORM ===== */
+.map-buttons button {
+  font-size: 11px;
+  padding: 14px 4px;
+}
 
-button,
-input,
-select,
-textarea {
+/* BUTTON / FORM */
+
+button {
+  cursor: pointer;
   font-family: inherit;
 }
 
@@ -351,21 +313,16 @@ textarea {
 .map-buttons button {
   width: 100%;
   max-width: 420px;
-
   padding: 16px;
-
-  border: 1px solid #f4f1ea;
-
   background: transparent;
-
+  border: 1px solid #f4f1ea;
   color: #f4f1ea;
-
   font-size: 13px;
-
   letter-spacing: 2px;
 }
 
 .submit-button {
+  margin-top: 14px;
   background: #f4f1ea;
   color: #111;
 }
@@ -375,18 +332,19 @@ select,
 textarea {
   width: 100%;
   max-width: 420px;
-
   display: block;
-
   margin: 9px auto;
-
   padding: 15px;
-
   border: 1px solid #555;
-
+  border-radius: 0;
   background: transparent;
-
   color: #f4f1ea;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+select option {
+  color: #111;
 }
 
 textarea {
@@ -394,101 +352,109 @@ textarea {
   resize: none;
 }
 
-/* ===== ACCOUNT ===== */
+input::placeholder,
+textarea::placeholder {
+  color: #9f9a92;
+}
+
+/* ACCOUNT */
 
 .accordion {
   max-width: 420px;
-
   margin: 12px auto;
-
   border: 1px solid #3a3a3a;
 }
 
 .accordion-title {
   width: 100%;
-
   padding: 18px;
-
-  border: none;
-
   background: transparent;
-
   color: #f4f1ea;
-
+  border: none;
   font-size: 14px;
-
   letter-spacing: 2px;
 }
 
 .accordion-content {
   display: none;
-
   padding: 18px;
-
   border-top: 1px solid #3a3a3a;
-
   text-align: left;
+  line-height: 1.8;
+}
+
+.accordion-content p {
+  margin: 6px 0;
 }
 
 .accordion-content button {
-  margin-top: 8px;
-
+  margin: 8px 0 18px;
   padding: 10px 14px;
-
-  border: 1px solid #c7b7aa;
-
   background: transparent;
-
   color: #c7b7aa;
+  border: 1px solid #c7b7aa;
+  letter-spacing: 2px;
 }
 
-/* ===== ENDING ===== */
+/* ENDING */
+
+.ending h2 {
+  margin-bottom: 24px;
+}
 
 .ending p {
   line-height: 1.8;
+  letter-spacing: 2px;
+  font-size: 13px;
 }
 
 .ending-small {
   margin-top: 40px;
-
   color: #c7b7aa;
-
-  font-size: 10px;
-
-  letter-spacing: 3px;
+  font-size: 10px !important;
+  letter-spacing: 3px !important;
 }
 
-/* ===== FILM ===== */
+/* PHOTO MODAL */
+
+.photo-modal {
+  display: none;
+  position: fixed;
+  z-index: 2600;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.photo-modal img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* FILM */
 
 .film-grain {
   pointer-events: none;
-
   position: fixed;
   inset: 0;
-
   z-index: 999;
-
   opacity: 0.055;
-
   background-image:
     radial-gradient(circle, rgba(255,255,255,.35) 1px, transparent 1px),
     radial-gradient(circle, rgba(0,0,0,.25) 1px, transparent 1px);
-
   background-size: 6px 6px, 9px 9px;
-
   mix-blend-mode: overlay;
 }
 
-/* ===== REVEAL ===== */
+/* REVEAL */
 
 .reveal {
   opacity: 0;
-
   transform: translateY(24px);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.active {

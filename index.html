@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THE WEDDING ISSUE</title>
-  <link rel="stylesheet" href="style.css?v=5" />
+
+  <title>박갑수 ♥ 곽애리 결혼합니다</title>
+
+  <meta property="og:title" content="갑수 ♥ 애리 결혼합니다">
+  <meta property="og:description" content="2026년 10월 11일 일요일 오후 1시 30분 · 라포에트 웨딩홀">
+  <meta property="og:image" content=" https://gabsoo920830-we.github.io/wedding-invitation/main.JPG">
+  <meta property="og:url" content=" https://gabsoo920830-we.github.io/wedding-invitation">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 
@@ -47,6 +55,7 @@
 <section class="section reveal">
   <p class="label">EDITOR'S NOTE</p>
   <h2>WE INVITE YOU</h2>
+
   <p class="text">
     서로 다른 길을 걸어온 두 사람이<br>
     이제 같은 방향을 바라보며<br>
@@ -55,6 +64,16 @@
     감사의 마음으로<br>
     새로운 시작을 함께하려 합니다.
   </p>
+
+  <div class="family">
+    <strong>박갑수</strong>
+    신랑 아버지 박종원 · 어머니 김해정의 장남
+
+    <br><br>
+
+    <strong>곽애리</strong>
+    신부 아버지 곽영균 · 어머니 민정애의 장녀
+  </div>
 </section>
 
 <section class="section dark reveal">
@@ -100,10 +119,10 @@
 
   <button class="line-button" onclick="copyAddress()">ADDRESS COPY</button>
 
-<div class="map-buttons">
-  <button onclick="openNaverMap()">NAVER MAP</button>
-  <button onclick="openKakaoMap()">KAKAO MAP</button>
-</div>
+  <div class="map-buttons">
+    <button onclick="openNaverMap()">NAVER MAP</button>
+    <button onclick="openKakaoMap()">KAKAO MAP</button>
+  </div>
 </section>
 
 <section class="section reveal">
@@ -122,9 +141,9 @@
       <p>신한은행 110-345-861365</p>
       <button onclick="copyText('신한은행 110-345-861365 박갑수')">COPY</button>
 
-      <p>혼주 ○○○</p>
-      <p>신한은행 000-000-000000</p>
-      <button onclick="copyText('신한은행 000-000-000000 ○○○')">COPY</button>
+      <p>혼주 박종원</p>
+      <p>농협은행 000-000-000000</p>
+      <button onclick="copyText('농협은행 000-000-000000 박종원')">COPY</button>
     </div>
   </div>
 
@@ -132,12 +151,12 @@
     <button class="accordion-title" onclick="toggleAccordion('brideAccount')">신부측</button>
     <div class="accordion-content" id="brideAccount">
       <p>신부 곽애리</p>
-      <p>카카오뱅크 3333-00-0000000</p>
-      <button onclick="copyText('카카오뱅크 3333-00-0000000 곽애리')">COPY</button>
+      <p>국민은행 3333-00-0000000</p>
+      <button onclick="copyText('국민은행 3333-00-0000000 곽애리')">COPY</button>
 
-      <p>혼주 ○○○</p>
+      <p>혼주 곽영균</p>
       <p>우리은행 0000-000-000000</p>
-      <button onclick="copyText('우리은행 0000-000-000000 ○○○')">COPY</button>
+      <button onclick="copyText('우리은행 0000-000-000000 곽영균')">COPY</button>
     </div>
   </div>
 </section>
@@ -178,6 +197,6 @@
   <img id="modalImage">
 </div>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
