@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  background: #faf7f2;
+  color: #333;
+  text-align: center;
+}
+
+section {
+  padding: 70px 24px;
+}
+
+.main {
+  min-height: 100vh;
+  background: linear-gradient(#f8eee7, #faf7f2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small {
+  letter-spacing: 3px;
+  font-size: 13px;
+  color: #9b7b6b;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.date {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.place {
+  color: #777;
+}
+
+.message p,
+.info p,
+.ending p {
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  background: #9b7b6b;
+  color: white;
+  font-size: 16px;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+.gallery {
+  background: #fffaf6;
+}
+
+.gallery-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.gallery-box img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+
+  image-rendering: auto;
+
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 28px;
+  line-height: 42px;
+  background: #b89b8c;
+}
+
+#photoNumber {
+  margin-top: 18px;
+  color: #8a756b;
+  font-size: 14px;
+}
+
+.rsvp {
+  background: #fffaf6;
+}
+
+.rsvp input,
+.rsvp select,
+.rsvp textarea {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  margin: 8px auto;
+  padding: 14px;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.rsvp textarea {
+  height: 100px;
+  resize: none;
+}
+
+.rsvp button {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 12px;
+}
