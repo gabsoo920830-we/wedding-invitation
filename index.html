@@ -7,137 +7,177 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<div id="touchStart" class="touch-start">
+  <div>
+    <p>THE WEDDING</p>
+    <span>TOUCH TO START</span>
+  </div>
+</div>
+
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music-button" onclick="toggleMusic()">♪ SOUND ON</button>
+<button id="musicButton" class="music-button" onclick="toggleMusic()">SOUND OFF</button>
+
+</button>
 
 <div class="film-grain"></div>
 
-  <!-- COVER -->
-  <section class="cover-section reveal">
-    <img src="main.JPG" class="cover-bg" alt="Wedding Cover">
-    <div class="cover-dim"></div>
+<section class="cover-section">
+  <img src="main.JPG" class="cover-bg" alt="Wedding Cover">
+  <div class="cover-dim"></div>
 
-    <div class="cover-top">
-      <p>OCTOBER 2026</p>
-      <p>THE WEDDING ISSUE</p>
-    </div>
+  <div class="cover-top">
+    <p>OCTOBER 2026</p>
+    <p>THE WEDDING ISSUE</p>
+  </div>
 
-    <h1 class="cover-title">
-      THE<br>WEDDING
-    </h1>
+  <h1 class="cover-title">THE<br>WEDDING</h1>
 
-    <div class="cover-names">
-      <p>GABSOO & AERI</p>
-    </div>
+  <div class="cover-names">
+    <p>GABSOO & AERI</p>
+  </div>
 
-    <div class="cover-bottom">
-      <p>11 OCTOBER 2026</p>
-      <p>라포에트 웨딩홀</p>
-    </div>
-  </section>
+  <div class="cover-bottom">
+    <p>11 OCTOBER 2026</p>
+    <p>라포에트 웨딩홀</p>
+  </div>
+</section>
 
-  <!-- EDITOR'S NOTE -->
-  <section class="section reveal">
-    <p class="label">EDITOR'S NOTE</p>
-    <h2>WE INVITE YOU</h2>
-    <p class="text">
-      서로 다른 길을 걸어온 두 사람이<br>
-      이제 같은 방향을 바라보며<br>
-      평생의 동반자가 되고자 합니다.<br><br>
-      소중한 분들을 모시고<br>
-      감사의 마음으로<br>
-      새로운 시작을 함께하려 합니다.
-    </p>
-  </section>
+<section class="section reveal">
+  <p class="label">EDITOR'S NOTE</p>
+  <h2>WE INVITE YOU</h2>
+  <p class="text">
+    서로 다른 길을 걸어온 두 사람이<br>
+    이제 같은 방향을 바라보며<br>
+    평생의 동반자가 되고자 합니다.<br><br>
+    소중한 분들을 모시고<br>
+    감사의 마음으로<br>
+    새로운 시작을 함께하려 합니다.
+  </p>
+</section>
 
-  <!-- GALLERY -->
-  <section class="section dark">
-    <p class="label">PHOTO EDITORIAL</p>
-    <h2>GALLERY</h2>
+<section class="section dark reveal">
+  <p class="label">CALENDAR</p>
+  <h2>WEDDING DAY</h2>
+  <p class="date-text">2026.10.11 SUNDAY 1:30 PM</p>
 
-    <div class="gallery-box">
-      <button class="arrow" onclick="prevPhoto()">‹</button>
-      <img id="galleryImage" src="photo01.JPG" alt="Wedding Photo">
-      <button class="arrow" onclick="nextPhoto()">›</button>
-    </div>
+  <div class="dday-box">
+    <div><strong id="days">0</strong><span>Days</span></div>
+    <div><strong id="hours">0</strong><span>Hour</span></div>
+    <div><strong id="minutes">0</strong><span>Min</span></div>
+    <div><strong id="seconds">0</strong><span>Sec</span></div>
+  </div>
 
-    <p id="photoNumber">01 / 05</p>
-  </section>
+  <p class="dday-text">GABSOO & AERI 결혼식까지 <span id="dday">D-000</span></p>
+</section>
 
-  <!-- LOCATION -->
-  <section class="section reveal">
-    <p class="label">LOCATION</p>
-    <h2>WEDDING DAY</h2>
+<section class="section reveal">
+  <p class="label">PHOTO EDITORIAL</p>
+  <h2>GALLERY</h2>
 
-    <div class="info-box">
-      <p class="main-info">라포에트 웨딩홀</p>
-      <p>2026년 10월 11일 일요일</p>
-      <p>오후 1시 30분</p>
-      <p>경기도 광명시 광명역로 21 KTX광명역 동편 B1</p>
-    </div>
+  <div class="photo-grid">
+    <img src="photo01.JPG" onclick="openPhoto(this.src)">
+    <img src="photo02.JPG" onclick="openPhoto(this.src)">
+    <img src="photo03.JPG" onclick="openPhoto(this.src)">
+    <img src="photo04.JPG" onclick="openPhoto(this.src)">
+    <img src="photo05.JPG" onclick="openPhoto(this.src)">
+    <img src="photo06.JPG" onclick="openPhoto(this.src)">
+    <img src="photo07.JPG" onclick="openPhoto(this.src)">
+    <img src="photo08.JPG" onclick="openPhoto(this.src)">
+  </div>
+</section>
 
-    <button class="line-button" onclick="openMap()">OPEN MAP</button>
-  </section>
+<section class="section dark reveal">
+  <p class="label">LOCATION</p>
+  <h2>오시는 길</h2>
 
-  <!-- ACCOUNT -->
-  <section class="section dark">
-    <p class="label">ACCOUNT</p>
-    <h2>THANKFUL HEART</h2>
+  <div class="info-box">
+    <p class="main-info">LA FÊTE WEDDING HALL</p>
+    <p id="address">경기도 광명시 광명역로 21 KTX광명역 동편 B1</p>
+    <p>2026년 10월 11일 일요일 오후 1시 30분</p>
+  </div>
 
-    <div class="account-box">
-      <p class="main-info">GROOM</p>
-      <p>신한은행 110-345-861365</p>
-      <p>박갑수</p>
-    </div>
+  <button class="line-button" onclick="copyAddress()">ADDRESS COPY</button>
 
-    <button class="line-button white" onclick="copyAccount()">COPY ACCOUNT</button>
-  </section>
+  <div class="map-buttons">
+    <button onclick="openMap()">KAKAO MAP</button>
+    <button onclick="openNaverMap()">NAVER MAP</button>
+    <button onclick="openTmap()">T MAP</button>
+  </div>
+</section>
 
-  <!-- RSVP -->
-  <section class="section reveal">
-    <p class="label">RSVP</p>
-    <h2>PLEASE LET US KNOW</h2>
-    <p class="text small-text">
-      참석 여부를 알려주시면 감사하겠습니다.
-    </p>
+<section class="section reveal">
+  <p class="label">ACCOUNT</p>
+  <h2>마음 전하실 곳</h2>
 
-    <input type="text" id="guestName" placeholder="성함">
+  <p class="text small-text">
+    참석이 어려워 직접 축하를 전하지 못하는 분들을 위해<br>
+    계좌번호를 기재하였습니다.
+  </p>
 
-    <select id="참석 여부">
-      <option value="">참석 여부</option>
-      <option value="참석">참석</option>
-      <option value="불참">불참</option>
-    </select>
+  <div class="accordion">
+<button class="accordion-title" onclick="toggleAccordion('groomAccount')">신랑측</button>
+<div class="accordion-content" id="groomAccount">
+<p>신랑 박갑수</p>
+<p>신한은행 110-345-861365</p>
+<button onclick="copyText('국민은행 123456-78-123456 박갑수')">COPY</button>
+<p>혼주 ○○○</p>
+<p>신한은행 000-000-000000</p>
+<button onclick="copyText('신한은행 000-000-000000 ○○○')">COPY</button>
+</div>
+</div>
+<div class="accordion">
+<button class="accordion-title" onclick="toggleAccordion('brideAccount')">신부측</button>
+<div class="accordion-content" id="brideAccount">
+<p>신부 곽애리</p>
+<p>카카오뱅크 3333-00-0000000</p>
+<button onclick="copyText('카카오뱅크 3333-00-0000000 곽애리')">COPY</button>
+<p>혼주 ○○○</p>
+<p>우리은행 0000-000-000000</p>
+<button onclick="copyText('우리은행 0000-000-000000 ○○○')">COPY</button>
+</div>
+</div>
+</section>
 
-    <input type="number" id="guestCount" placeholder="참석 인원">
+<section class="section dark reveal">
+  <p class="label">RSVP</p>
+  <h2>PLEASE LET US KNOW</h2>
+  <p class="text small-text">참석 여부를 알려주시면 감사하겠습니다.</p>
 
-    <select id="식사 여부">
-      <option value="">식사 여부</option>
-      <option value="식사함">식사함</option>
-      <option value="식사 안함">식사 안함</option>
-    </select>
+  <input type="text" id="guestName" placeholder="성함">
 
-    <textarea id="messageBox" placeholder="방명록"></textarea>
+  <select id="attendance">
+    <option value="">참석 여부</option>
+    <option value="참석">참석</option>
+    <option value="불참">불참</option>
+  </select>
 
-    <button class="submit-button" onclick="submitRSVP()">SUBMIT RSVP</button>
-  </section>
+  <input type="number" id="guestCount" placeholder="참석 인원">
 
-  <!-- ENDING -->
-  <section class="section dark ending">
-    <h2>THANK YOU</h2>
-    <p>
-      FOR BEING PART OF<br>
-      OUR STORY.
-    </p>
-    <p class="ending-small">
-      THE WEDDING ISSUE<br>
-      OCTOBER 2026
-    </p>
-  </section>
+  <select id="meal">
+    <option value="">식사 여부</option>
+    <option value="식사함">식사함</option>
+    <option value="식사 안함">식사 안함</option>
+  </select>
 
-  <script src="script.js"></script>
+  <textarea id="messageBox" placeholder="남기실 말씀"></textarea>
+
+  <button class="submit-button" onclick="submitRSVP()">SUBMIT RSVP</button>
+</section>
+
+<section class="section dark ending reveal">
+  <h2>THANK YOU</h2>
+  <p>FOR BEING PART OF<br>OUR STORY.</p>
+  <p class="ending-small">THE WEDDING ISSUE<br>OCTOBER 2026</p>
+</section>
+
+<div class="photo-modal" id="photoModal" onclick="closePhoto()">
+  <img id="modalImage">
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

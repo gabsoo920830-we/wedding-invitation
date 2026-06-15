@@ -1,53 +1,129 @@
 function openMap() {
+  window.open("https://place.map.kakao.com/16488925", "_blank");
+}
+
+function openNaverMap() {
   window.open("https://map.naver.com/p/search/%EB%9D%BC%ED%8F%AC%EC%97%90%ED%8A%B8%20%EC%9B%A8%EB%94%A9%ED%99%80/place/36841824?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202606151406&locale=ko&svcName=map_pcv5&searchText=%EB%9D%BC%ED%8F%AC%EC%97%90%ED%8A%B8%20%EC%9B%A8%EB%94%A9%ED%99%80", "_blank");
 }
 
-function copyAccount() {
-  navigator.clipboard.writeText("신한은행 110-345-861365 박갑수");
-  alert("계좌번호가 복사되었습니다.");
+function openTmap() {
+  window.open("https://apis.openapi.sk.com/tmap/app/routes?name=%EA%B4%91%EB%AA%85%EC%97%AD%EC%82%AC%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80", "_blank");
 }
 
-const photos = [
-  "photo01.JPG",
-  "photo02.JPG",
-  "photo03.JPG",
-  "photo04.JPG",
-  "photo05.JPG"
-];
-
-let currentPhoto = 0;
-
-function showPhoto() {
-  const image = document.getElementById("galleryImage");
-  const number = document.getElementById("photoNumber");
-
-  image.src = photos[currentPhoto];
-
-  const current = String(currentPhoto + 1).padStart(2, "0");
-  const total = String(photos.length).padStart(2, "0");
-
-  number.innerText = `${current} / ${total}`;
+function copyAddress() {
+  const address = document.getElementById("address").innerText;
+  navigator.clipboard.writeText(address);
+  alert("주소가 복사되었습니다.");
 }
 
-function nextPhoto() {
-  currentPhoto++;
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  alert("복사되었습니다.");
+}
 
-  if (currentPhoto >= photos.length) {
-    currentPhoto = 0;
+function toggleAccordion(id) {
+  const content = document.getElementById(id);
+  content.style.display = content.style.display === "block" ? "none" : "block";
+}
+
+function openPhoto(src) {
+  document.getElementById("modalImage").src = src;
+  document.getElementById("photoModal").style.display = "flex";
+}
+
+function closePhoto() {
+  document.getElementById("photoModal").style.display = "none";
+}
+
+const weddingDate = new Date("2026-10-11T13:30:00").getTime();
+
+function updateDday() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+  const hours = Math.max(0, Math.floor((distance / (1000 * 60 * 60)) % 24));
+  const minutes = Math.max(0, Math.floor((distance / (1000 * 60)) % 60));
+  const seconds = Math.max(0, Math.floor((distance / 1000) % 60));
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+  document.getElementById("dday").innerText = `D-${days}`;
+}
+
+setInterval(updateDday, 1000);
+updateDday();
+
+let isPlaying = false;
+
+function startMusicFirstTouch() {
+  const music = document.getElementById("bgMusic");
+  const startScreen = document.getElementById("touchStart");
+  const button = document.getElementById("musicButton");
+
+  music.play()
+    .then(() => {
+      isPlaying = true;
+      button.innerText = "SOUND OFF";
+      startScreen.classList.add("hide");
+    })
+    .catch(() => {
+      isPlaying = false;
+      button.innerText = "SOUND ON";
+      startScreen.classList.add("hide");
+    });
+}
+
+document.getElementById("touchStart").addEventListener("click", startMusicFirstTouch);
+document.getElementById("touchStart").addEventListener("touchstart", startMusicFirstTouch);
+
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  const button = document.getElementById("musicButton");
+
+  if (isPlaying) {
+    music.pause();
+    isPlaying = false;
+    button.innerText = "SOUND ON";
+  } else {
+    music.play();
+    isPlaying = true;
+    button.innerText = "SOUND OFF";
   }
-
-  showPhoto();
 }
 
-function prevPhoto() {
-  currentPhoto--;
+function scrollToMenu() {
+  document.querySelector(".section").scrollIntoView({ behavior: "smooth" });
+}
 
-  if (currentPhoto < 0) {
-    currentPhoto = photos.length - 1;
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: "THE WEDDING ISSUE",
+      text: "박갑수 & 곽애리의 결혼식에 초대합니다.",
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert("링크가 복사되었습니다.");
   }
-
-  showPhoto();
 }
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  revealElements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      element.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
 function submitRSVP() {
   const name = document.getElementById("guestName").value;
@@ -65,11 +141,11 @@ function submitRSVP() {
     method: "POST",
     mode: "no-cors",
     body: JSON.stringify({
-      name: name,
-      attendance: attendance,
-      count: count,
-      meal: meal,
-      message: message
+      name,
+      attendance,
+      count,
+      meal,
+      message
     })
   });
 
@@ -81,35 +157,3 @@ function submitRSVP() {
   document.getElementById("meal").value = "";
   document.getElementById("messageBox").value = "";
 }
-
-let isPlaying = false;
-
-function toggleMusic() {
-  const music = document.getElementById("bgMusic");
-  const button = document.querySelector(".music-button");
-
-  if (!isPlaying) {
-    music.play();
-    isPlaying = true;
-    button.innerText = "♪ SOUND OFF";
-  } else {
-    music.pause();
-    isPlaying = false;
-    button.innerText = "♪ SOUND ON";
-  }
-}
-
-const revealElements = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  revealElements.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-
-    if (rect.top < window.innerHeight - 80) {
-      element.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
