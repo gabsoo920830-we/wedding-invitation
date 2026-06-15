@@ -3,84 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>모바일 청첩장</title>
+  <title>THE WEDDING ISSUE</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-  <section class="main">
-    <img src="main.jpg" class="main-photo">
-    <p class="small">Wedding Invitation</p>
-    <h1>박갑수 ♥ 곽애리</h1>
-    <p class="date">2026.10.11 SUN</p>
-    <p class="place">라포에트 웨딩홀</p>
+<button class="music-button" onclick="toggleMusic()">♪ SOUND ON</button>
+
+<div class="film-grain"></div>
+
+  <!-- COVER -->
+  <section class="cover-section reveal">
+    <img src="main.JPG" class="cover-bg" alt="Wedding Cover">
+    <div class="cover-dim"></div>
+
+    <div class="cover-top">
+      <p>OCTOBER 2026</p>
+      <p>THE WEDDING ISSUE</p>
+    </div>
+
+    <h1 class="cover-title">
+      THE<br>WEDDING
+    </h1>
+
+    <div class="cover-names">
+      <p>GABSOO & AERI</p>
+    </div>
+
+    <div class="cover-bottom">
+      <p>11 OCTOBER 2026</p>
+      <p>라포에트 웨딩홀</p>
+    </div>
   </section>
 
-<section class="gallery">
-  <h2>Gallery</h2>
-
-  <div class="gallery-box">
-    <button class="arrow" onclick="prevPhoto()">‹</button>
-
-    <img id="galleryImage" src="photo01.jpg" alt="웨딩 사진">
-
-    <button class="arrow" onclick="nextPhoto()">›</button>
-  </div>
-
-  <p id="photoNumber">1 / 5</p>
-</section>
-
-  <section class="message">
-    <h2>초대합니다</h2>
-    <p>
+  <!-- EDITOR'S NOTE -->
+  <section class="section reveal">
+    <p class="label">EDITOR'S NOTE</p>
+    <h2>WE INVITE YOU</h2>
+    <p class="text">
       서로 다른 길을 걸어온 두 사람이<br>
       이제 같은 방향을 바라보며<br>
       평생의 동반자가 되고자 합니다.<br><br>
-      귀한 걸음으로 축복해 주시면<br>
-      큰 기쁨이 되겠습니다.
+      소중한 분들을 모시고<br>
+      감사의 마음으로<br>
+      새로운 시작을 함께하려 합니다.
     </p>
   </section>
 
-  <section class="info">
-    <h2>예식 안내</h2>
-    <p>2026년 10월 11일 일요일</p>
-    <p>오후 1시 30분</p>
-    <p 라포에르 웨딩홀</p>
-    <p>경기도 광명시 광명역로 21 KTX광명역 동편 B1</p>
+  <!-- GALLERY -->
+  <section class="section dark">
+    <p class="label">PHOTO EDITORIAL</p>
+    <h2>GALLERY</h2>
+
+    <div class="gallery-box">
+      <button class="arrow" onclick="prevPhoto()">‹</button>
+      <img id="galleryImage" src="photo01.JPG" alt="Wedding Photo">
+      <button class="arrow" onclick="nextPhoto()">›</button>
+    </div>
+
+    <p id="photoNumber">01 / 05</p>
   </section>
 
-  <section class="buttons">
-    <button onclick="openMap()">지도 보기</button>
-    <button onclick="copyAccount()">계좌번호 복사</button>
+  <!-- LOCATION -->
+  <section class="section reveal">
+    <p class="label">LOCATION</p>
+    <h2>WEDDING DAY</h2>
+
+    <div class="info-box">
+      <p class="main-info">라포에트 웨딩홀</p>
+      <p>2026년 10월 11일 일요일</p>
+      <p>오후 1시 30분</p>
+      <p>경기도 광명시 광명역로 21 KTX광명역 동편 B1</p>
+    </div>
+
+    <button class="line-button" onclick="openMap()">OPEN MAP</button>
   </section>
 
-<section class="rsvp">
-  <h2>참석 여부 전달</h2>
-  <p>참석 여부를 알려주시면 감사하겠습니다.</p>
+  <!-- ACCOUNT -->
+  <section class="section dark">
+    <p class="label">ACCOUNT</p>
+    <h2>THANKFUL HEART</h2>
 
-  <input type="text" id="guestName" placeholder="성함">
+    <div class="account-box">
+      <p class="main-info">GROOM</p>
+      <p>신한은행 110-345-861365</p>
+      <p>박갑수</p>
+    </div>
 
-  <select id="attendance">
-    <option value="">참석 여부 선택</option>
-    <option value="참석">참석</option>
-    <option value="불참">불참</option>
-  </select>
+    <button class="line-button white" onclick="copyAccount()">COPY ACCOUNT</button>
+  </section>
 
-  <input type="number" id="guestCount" placeholder="참석 인원">
+  <!-- RSVP -->
+  <section class="section reveal">
+    <p class="label">RSVP</p>
+    <h2>PLEASE LET US KNOW</h2>
+    <p class="text small-text">
+      참석 여부를 알려주시면 감사하겠습니다.
+    </p>
 
-  <select id="meal">
-    <option value="">식사 여부 선택</option>
-    <option value="식사함">식사함</option>
-    <option value="식사 안함">식사 안함</option>
-  </select>
+    <input type="text" id="guestName" placeholder="성함">
 
-  <textarea id="message" placeholder="전달사항"></textarea>
+    <select id="참석 여부">
+      <option value="">참석 여부</option>
+      <option value="참석">참석</option>
+      <option value="불참">불참</option>
+    </select>
 
-  <button onclick="submitRSVP()">참석 여부 제출</button>
-</section>
+    <input type="number" id="guestCount" placeholder="참석 인원">
 
-  <section class="ending">
-    <p>저희의 시작을 함께 축복해 주셔서 감사합니다.</p>
+    <select id="식사 여부">
+      <option value="">식사 여부</option>
+      <option value="식사함">식사함</option>
+      <option value="식사 안함">식사 안함</option>
+    </select>
+
+    <textarea id="messageBox" placeholder="방명록"></textarea>
+
+    <button class="submit-button" onclick="submitRSVP()">SUBMIT RSVP</button>
+  </section>
+
+  <!-- ENDING -->
+  <section class="section dark ending">
+    <h2>THANK YOU</h2>
+    <p>
+      FOR BEING PART OF<br>
+      OUR STORY.
+    </p>
+    <p class="ending-small">
+      THE WEDDING ISSUE<br>
+      OCTOBER 2026
+    </p>
   </section>
 
   <script src="script.js"></script>

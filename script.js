@@ -3,7 +3,7 @@ function openMap() {
 }
 
 function copyAccount() {
-  navigator.clipboard.writeText("국민은행 123456-78-123456 신랑이름");
+  navigator.clipboard.writeText("신한은행 110-345-861365 박갑수");
   alert("계좌번호가 복사되었습니다.");
 }
 
@@ -22,11 +22,15 @@ function showPhoto() {
   const number = document.getElementById("photoNumber");
 
   image.src = photos[currentPhoto];
-  number.innerText = `${currentPhoto + 1} / ${photos.length}`;
+
+  const current = String(currentPhoto + 1).padStart(2, "0");
+  const total = String(photos.length).padStart(2, "0");
+
+  number.innerText = `${current} / ${total}`;
 }
 
 function nextPhoto() {
-  currentPhoto = currentPhoto + 1;
+  currentPhoto++;
 
   if (currentPhoto >= photos.length) {
     currentPhoto = 0;
@@ -36,7 +40,7 @@ function nextPhoto() {
 }
 
 function prevPhoto() {
-  currentPhoto = currentPhoto - 1;
+  currentPhoto--;
 
   if (currentPhoto < 0) {
     currentPhoto = photos.length - 1;
@@ -46,20 +50,16 @@ function prevPhoto() {
 }
 
 function submitRSVP() {
-  alert("버튼 클릭은 됩니다.");
-
   const name = document.getElementById("guestName").value;
   const attendance = document.getElementById("attendance").value;
   const count = document.getElementById("guestCount").value;
   const meal = document.getElementById("meal").value;
-  const message = document.getElementById("message").value;
+  const message = document.getElementById("messageBox").value;
 
   if (!name || !attendance) {
     alert("성함과 참석 여부를 입력해주세요.");
     return;
   }
-
-  alert("fetch 실행 직전");
 
   fetch("https://script.google.com/macros/s/AKfycbzuNXTCW-POyR5ppHTZ39wUlDwrZbrAihLInMPKrv5XIXs-dJLwTAp-rxD7JCi_ypdZqA/exec", {
     method: "POST",
@@ -73,11 +73,43 @@ function submitRSVP() {
     })
   });
 
-  alert("참석 여부가 전달되었습니다 😊");
+  alert("참석 여부가 전달되었습니다.");
 
   document.getElementById("guestName").value = "";
   document.getElementById("attendance").value = "";
   document.getElementById("guestCount").value = "";
   document.getElementById("meal").value = "";
-  document.getElementById("message").value = "";
+  document.getElementById("messageBox").value = "";
 }
+
+let isPlaying = false;
+
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  const button = document.querySelector(".music-button");
+
+  if (!isPlaying) {
+    music.play();
+    isPlaying = true;
+    button.innerText = "♪ SOUND OFF";
+  } else {
+    music.pause();
+    isPlaying = false;
+    button.innerText = "♪ SOUND ON";
+  }
+}
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  revealElements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 80) {
+      element.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);

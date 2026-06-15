@@ -1,140 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background: #111;
+  color: #f4f1ea;
   font-family: "Pretendard", "Apple SD Gothic Neo", sans-serif;
-  background: #faf7f2;
-  color: #333;
   text-align: center;
 }
 
-section {
-  padding: 70px 24px;
+.cover-section {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
 }
 
-.main {
-  min-height: 100vh;
-  background: linear-gradient(#f8eee7, #faf7f2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(108%) brightness(78%);
 }
 
-.small {
+.cover-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.22);
+  z-index: 1;
+}
+
+.cover-top {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  font-size: 10px;
   letter-spacing: 3px;
-  font-size: 13px;
-  color: #9b7b6b;
+  line-height: 1.5;
+  font-weight: 700;
 }
 
-h1 {
-  font-size: 34px;
-  font-weight: 400;
-  margin: 20px 0;
+.cover-top p {
+  margin: 0;
+}
+
+.cover-title {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 66px;
+  line-height: 0.82;
+  letter-spacing: -4px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.65);
+}
+
+.cover-names {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 148px;
+  z-index: 2;
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.cover-bottom {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 42px;
+  z-index: 2;
+  font-size: 12px;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.cover-bottom p,
+.cover-names p {
+  margin: 0;
+}
+
+.section {
+  padding: 82px 24px;
+  background: #111;
+  color: #f4f1ea;
+}
+
+.dark {
+  background: #000;
+}
+
+.label {
+  margin: 0 0 20px;
+  color: #c7b7aa;
+  font-size: 10px;
+  letter-spacing: 4px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 24px;
+  margin: 0 0 32px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 1;
   font-weight: 400;
-  margin-bottom: 28px;
+  letter-spacing: -1px;
 }
 
-.date {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-.place {
-  color: #777;
-}
-
-.message p,
-.info p,
-.ending p {
-  line-height: 1.9;
+.text {
+  margin: 0 auto;
+  max-width: 340px;
   font-size: 16px;
+  line-height: 2;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-button {
-  border: none;
-  padding: 16px;
-  border-radius: 12px;
-  background: #9b7b6b;
-  color: white;
-  font-size: 16px;
-}
-
-button:active {
-  opacity: 0.8;
-}
-
-.gallery {
-  background: #fffaf6;
+.small-text {
+  margin-bottom: 26px;
 }
 
 .gallery-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .gallery-box img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-
-  image-rendering: auto;
-
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  width: 78%;
+  max-width: 340px;
+  height: 470px;
+  object-fit: cover;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
 }
 
 .arrow {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 38px;
+  height: 38px;
   padding: 0;
-  font-size: 28px;
-  line-height: 42px;
-  background: #b89b8c;
+  border-radius: 50%;
+  border: 1px solid #f4f1ea;
+  background: transparent;
+  color: #f4f1ea;
+  font-size: 26px;
+  line-height: 36px;
 }
 
 #photoNumber {
-  margin-top: 18px;
-  color: #8a756b;
-  font-size: 14px;
+  margin-top: 20px;
+  color: #c7b7aa;
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
-.rsvp {
-  background: #fffaf6;
+.info-box,
+.account-box {
+  margin-bottom: 28px;
+  line-height: 1.9;
 }
 
-.rsvp input,
-.rsvp select,
-.rsvp textarea {
+.info-box p,
+.account-box p {
+  margin: 6px 0;
+}
+
+.main-info {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.line-button,
+.submit-button {
   width: 100%;
   max-width: 420px;
-  box-sizing: border-box;
-  margin: 8px auto;
-  padding: 14px;
+  padding: 16px;
+  background: transparent;
+  border: 1px solid #f4f1ea;
+  color: #f4f1ea;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.line-button.white {
+  border-color: #f4f1ea;
+  color: #f4f1ea;
+}
+
+.submit-button {
+  margin-top: 14px;
+  background: #f4f1ea;
+  color: #111;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 420px;
   display: block;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  margin: 9px auto;
+  padding: 15px;
+  border: 1px solid #555;
+  border-radius: 0;
+  background: transparent;
+  color: #f4f1ea;
   font-size: 15px;
   font-family: inherit;
 }
 
-.rsvp textarea {
-  height: 100px;
+select option {
+  color: #111;
+}
+
+textarea {
+  height: 110px;
   resize: none;
 }
 
-.rsvp button {
-  width: 100%;
-  max-width: 420px;
-  margin-top: 12px;
+input::placeholder,
+textarea::placeholder {
+  color: #9f9a92;
+}
+
+.ending h2 {
+  margin-bottom: 24px;
+}
+
+.ending p {
+  line-height: 1.8;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.ending-small {
+  margin-top: 40px;
+  color: #c7b7aa;
+  font-size: 10px !important;
+  letter-spacing: 3px !important;
+}
+
+.music-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 999;
+  width: auto;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.55);
+  color: #f4f1ea;
+  border: 1px solid #f4f1ea;
+  font-size: 11px;
+  letter-spacing: 2px;
+  backdrop-filter: blur(6px);
+}
+
+.film-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.35) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.25) 0 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.35) 0 1px, transparent 1px);
+  background-size: 6px 6px, 8px 8px, 10px 10px;
+  mix-blend-mode: overlay;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
