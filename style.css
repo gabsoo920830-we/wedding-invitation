@@ -503,3 +503,14 @@ textarea::placeholder {
   line-height: 2;
   letter-spacing: 0.5px;
 }
+
+.accordion-content hr {
+  border: none;
+  border-top: 1px solid #3a3a3a;
+  margin: 24px 0;
+}
+
+.accordion-content strong {
+  color: #f4f1ea;
+  font-weight: 600;
+}
