@@ -461,3 +461,11 @@ textarea::placeholder {
   opacity: 1;
   transform: translateY(0);
 }
+
+.flower-note {
+  margin-top: 36px;
+  color: #c7b7aa;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.5px;
+}
