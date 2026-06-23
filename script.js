@@ -190,8 +190,9 @@ function toggleGallery() {
     photo.classList.toggle("show");
   });
 
-  button.innerText =
-    button.innerText === "VIEW MORE"
-      ? "VIEW LESS"
-      : "VIEW MORE";
+  if (button.innerText === "MORE PHOTOS") {
+    button.innerText = "CLOSE";
+  } else {
+    button.innerText = "MORE PHOTOS";
+  }
 }
