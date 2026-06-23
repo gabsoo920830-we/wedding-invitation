@@ -181,3 +181,17 @@ function submitRSVP() {
   document.getElementById("meal").value = "";
   document.getElementById("messageBox").value = "";
 }
+
+function toggleGallery() {
+  const photos = document.querySelectorAll(".extra-photo");
+  const button = document.getElementById("galleryButton");
+
+  photos.forEach(photo => {
+    photo.classList.toggle("show");
+  });
+
+  button.innerText =
+    button.innerText === "VIEW MORE"
+      ? "VIEW LESS"
+      : "VIEW MORE";
+}

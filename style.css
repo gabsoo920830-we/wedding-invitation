@@ -514,3 +514,21 @@ textarea::placeholder {
   color: #f4f1ea;
   font-weight: 600;
 }
+
+.extra-photo {
+  display: none;
+}
+
+.extra-photo.show {
+  display: block;
+}
+
+.gallery-button {
+  margin-top: 24px;
+  padding: 14px 24px;
+  background: transparent;
+  border: 1px solid #c7b7aa;
+  color: #c7b7aa;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
