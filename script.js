@@ -186,13 +186,11 @@ function toggleGallery() {
   const photos = document.querySelectorAll(".extra-photo");
   const button = document.getElementById("galleryButton");
 
+  const isClosed = button.innerText.trim() === "MORE PHOTOS";
+
   photos.forEach(photo => {
-    photo.classList.toggle("show");
+    photo.style.display = isClosed ? "block" : "none";
   });
 
-  if (button.innerText === "MORE PHOTOS") {
-    button.innerText = "CLOSE";
-  } else {
-    button.innerText = "MORE PHOTOS";
-  }
+  button.innerText = isClosed ? "CLOSE" : "MORE PHOTOS";
 }

@@ -516,11 +516,11 @@ textarea::placeholder {
 }
 
 .extra-photo {
-  display: none;
+  display: none !important;
 }
 
 .extra-photo.show {
-  display: block;
+  display: block !important;
 }
 
 .gallery-button {
